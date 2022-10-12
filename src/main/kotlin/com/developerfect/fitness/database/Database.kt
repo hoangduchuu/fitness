@@ -2,6 +2,7 @@ package com.developerfect.fitness.database
 
 import com.developerfect.fitness.models.ProductModel
 import com.developerfect.fitness.repositoy.ProductRepository
+import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -9,6 +10,8 @@ import java.util.logging.Logger
 
 @Configuration
 class Database {
+    private val logger = LoggerFactory.getLogger(this::class.java)
+
     @Bean
     fun initDatabase(product: ProductRepository): CommandLineRunner {
         return CommandLineRunner {

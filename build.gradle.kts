@@ -24,9 +24,15 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("mysql:mysql-connector-java")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	compileOnly("org.projectlombok:lombok:1.18.24")
+	annotationProcessor("org.projectlombok:lombok:1.18.24")
+
+	testCompileOnly("org.projectlombok:lombok:1.18.24")
+	testAnnotationProcessor("org.projectlombok:lombok:1.18.24")
 }
 
 tasks.withType<KotlinCompile> {
