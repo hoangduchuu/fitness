@@ -1,11 +1,13 @@
 package com.developerfect.fitness.service.impl
 
+import com.developerfect.fitness.models.BaseResponse
 import com.developerfect.fitness.models.User
-import com.developerfect.fitness.repositoy.ProductRepository
 import com.developerfect.fitness.repositoy.UserRepository
 import com.developerfect.fitness.service.IUserService
 import lombok.RequiredArgsConstructor
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
 
@@ -18,6 +20,15 @@ class UserService : IUserService {
 
     override fun listAll(): List<User> {
         return userRepository.findAll();
+    }
+
+
+    override fun create2(user: User): ResponseEntity<User> {
+        if(1==1){
+            return  ResponseEntity.notFound().build()
+        }
+        val createdUser: User = userRepository.save(user)
+        return ResponseEntity(createdUser, HttpStatus.CREATED)
     }
 
 }

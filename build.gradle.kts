@@ -33,6 +33,9 @@ dependencies {
 
 	testCompileOnly("org.projectlombok:lombok:1.18.24")
 	testAnnotationProcessor("org.projectlombok:lombok:1.18.24")
+
+	implementation("org.flywaydb:flyway-mysql")
+	implementation ("org.springframework.boot:spring-boot-starter-validation")
 }
 
 tasks.withType<KotlinCompile> {
