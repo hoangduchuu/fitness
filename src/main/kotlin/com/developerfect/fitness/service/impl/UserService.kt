@@ -25,7 +25,7 @@ class UserService : IUserService {
 
     override fun create2(user: User): ResponseEntity<User> {
         if(1==1){
-            return  ResponseEntity.notFound().build()
+            throw new UneditableException("Uneditable due to can not compile source", HttpStatus.BAD_REQUEST.value());
         }
         val createdUser: User = userRepository.save(user)
         return ResponseEntity(createdUser, HttpStatus.CREATED)
